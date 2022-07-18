@@ -1,0 +1,81 @@
+.FA__container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(162, 27%, 50%);
+}
+
+.FA__title {
+  padding: 30px;
+  font-size: 54px;
+  text-align: center;
+  background-color: hsl(162, 27%, 61%);
+  border-radius: 7px;
+  margin-top: 50px;
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.5);
+}
+
+.FA__userCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  padding: 30px 20px;
+  background-color: hsl(162, 27%, 69%);
+  border-radius: 7px;
+  margin-top: 50px;
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.5);
+}
+
+.FA__userName {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.FA__description {
+  width: inherit;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.FA__label {
+  font-size: 20px;
+}
+
+.FA__lineBreak {
+  border-color: #2f415b;
+  margin-bottom: 15px;
+}
+
+.FA__buttonBox {
+  width: 300px;
+  height: 35px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.FA__buttonLabel {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: hsl(162, 27%, 69%);
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.2);
+  font-size: 24px;
+}
+
+.FA_button {
+  padding: 0 20px;
+  background-color: hsl(151, 50%, 36%);
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.2);
+  font-size: 20px;
+  cursor: pointer;
+}
