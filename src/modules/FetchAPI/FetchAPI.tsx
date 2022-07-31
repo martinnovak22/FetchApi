@@ -1,33 +1,42 @@
 import { UserCard } from "./components/UserCard";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { UserCardProps } from "./types";
-import { getRandomNumber } from "./utils/getRandomNumber";
+import { fetchData } from "../../api/fetchData";
+import { getRandomNumberOneToTen } from "./utils/getRandomNumber";
 
 export function FetchAPI() {
-  const [randomUser, setRandomUser] = React.useState<UserCardProps | undefined>(
-    undefined
-  );
-  const fetchURL = "https://jsonplaceholder.typicode.com/users/";
+  const [randomUser, setRandomUser] = useState<UserCardProps>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const fetchRandomUser = async () => {
-    const response = await fetch(fetchURL + Math.round(getRandomNumber()));
-    await response.json().then((u) => setRandomUser(u));
+  const fetchRandomUser = () => {
+    setIsLoading(true);
+    fetchData(import.meta.env.VITE_API_URL + getRandomNumberOneToTen())
+      .then((data) => {
+        setRandomUser(data);
+      })
+      .catch((err) => {
+        setError(err.message);
+      })
+      .then(() => setIsLoading(false));
   };
 
   useEffect(() => {
-    fetchRandomUser().catch((e) => console.log(e));
+    fetchRandomUser();
   }, []);
 
+  console.log(randomUser);
   return (
     <div className={"FA__container"}>
       <h1 className={"FA__title"}>Fetch random user</h1>
 
       <UserCard
-        id={randomUser?.id}
         name={randomUser?.name}
         username={randomUser?.username}
         email={randomUser?.email}
         phone={randomUser?.phone}
+        isLoading={isLoading}
+        error={error}
       />
 
       <div className={"FA__buttonBox"}>
@@ -38,7 +47,9 @@ export function FetchAPI() {
         <input
           id={"fetchButton"}
           type={"button"}
-          onClick={() => fetchRandomUser()}
+          onClick={() => {
+            fetchRandomUser();
+          }}
           className={"FA_button"}
           value={"Fetch!"}
         />
