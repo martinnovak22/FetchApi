@@ -1,7 +1,7 @@
 import { UserCard } from "./components/UserCard";
 import { useEffect, useState } from "react";
 import { UserCardProps } from "./types";
-import { fetchData } from "../../api/fetchData";
+import { fetchData } from "../../api/APIUtils";
 import { getRandomNumberOneToTen } from "./utils/getRandomNumber";
 
 export function FetchAPI() {
@@ -25,7 +25,6 @@ export function FetchAPI() {
     fetchRandomUser();
   }, []);
 
-  console.log(randomUser);
   return (
     <div className={"FA__container"}>
       <h1 className={"FA__title"}>Fetch random user</h1>
