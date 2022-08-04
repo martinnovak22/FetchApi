@@ -1,24 +1,25 @@
 import { UserCard } from "./components/UserCard";
 import { useEffect, useState } from "react";
 import { UserCardProps } from "./types";
-import { fetchData } from "../../api/APIUtils";
-import { getRandomNumberOneToTen } from "./utils/getRandomNumber";
+import { fetchUserData } from "../../api/APIUtils";
+import { getRandomNumberOneToFifty } from "./utils/getRandomNumber";
 
 export function FetchAPI() {
   const [randomUser, setRandomUser] = useState<UserCardProps>();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
   const [error, setError] = useState("");
 
   const fetchRandomUser = () => {
-    setIsLoading(true);
-    fetchData(import.meta.env.VITE_API_URL + getRandomNumberOneToTen())
+    setIsloading(true);
+    fetchUserData(import.meta.env.VITE_API_URL + getRandomNumberOneToFifty())
       .then((data) => {
         setRandomUser(data);
       })
+
       .catch((err) => {
         setError(err.message);
       })
-      .then(() => setIsLoading(false));
+      .then(() => setIsloading(false));
   };
 
   useEffect(() => {

@@ -28,8 +28,8 @@ export function UserCard({
 
       <div className={"FA__description"}>
         <label className={"FA__label"}>Name: </label>
-        <output>{name}</output>
 
+        <output>{name}</output>
         <hr className={"FA__lineBreak"} />
 
         <label className={"FA__label"}>Email: </label>
@@ -39,6 +39,7 @@ export function UserCard({
 
         <label className={"FA__label"}>Phone: </label>
         <output>{phone}</output>
+        <hr className={"FA__lineBreak"} />
       </div>
     </div>
   );

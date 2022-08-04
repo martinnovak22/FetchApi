@@ -20,8 +20,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
-  height: 300px;
+  width: 320px;
+  height: 350px;
   padding: 30px 20px;
   background-color: hsl(162, 27%, 69%);
   border-radius: 7px;
@@ -37,17 +37,17 @@
 
 .FA__description {
   width: inherit;
-  margin-top: 24px;
-  text-align: left;
+  margin-top: 25px;
+  font-size: 18px;
 }
 
 .FA__label {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .FA__lineBreak {
   border-color: #2f415b;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .FA__buttonBox {

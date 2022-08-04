@@ -1,5 +1,7 @@
-export const fetchData = async (url: string) => {
-  return await fetch(url).then((res) => {
+export const fetchUserData = async (url: string) => {
+  return await fetch(url, {
+    method: "GET",
+  }).then((res) => {
     if (res.ok) {
       return res.json();
     }

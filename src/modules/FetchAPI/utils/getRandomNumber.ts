@@ -1,3 +1,3 @@
-export const getRandomNumberOneToTen = () => {
-  return Math.round(Math.random() * (10 - 1) + 1);
+export const getRandomNumberOneToFifty = () => {
+  return Math.round(Math.random() * (50 - 1) + 1);
 };
